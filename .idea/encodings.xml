@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/task-cloud-core-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/task-cloud-core-bootstrap" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/task-cloud-core-consumer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/task-cloud-core-getway" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/task-cloud-core-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/task-cloud-core-provider/task-cloud-core-taskservice" charset="UTF-8" />
+  </component>
+</project>
