@@ -1,0 +1,11 @@
+[
+
+  {
+    "apiName": "area_api",
+    "predicateItems": [
+      {
+        "pattern": "/getall"
+      }
+    ]
+  }
+]

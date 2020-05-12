@@ -6,11 +6,46 @@ spring:
     gateway:
       discovery:      #是否与服务发现组件进行结合，通过 serviceId(必须设置成大写) 转发到具体的服务实例。默认为false，设为true便开启通过服务中心的自动根据 serviceId 创建路由的功能。
         locator:      #路由访问方式：http://Gateway_HOST:Gateway_PORT/大写的serviceId，其中微服务应用名默认大写访问。
-          enabled: true
+          enabled: false
         lowerCaseServiceId: true #使用小写的serviceId,同时一定要配置StripPrefix=1
+        # 跨域
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedHeaders: "*"
+            allowedOrigins: "*"
+            allowedMethods:
+            - GET
+              POST
+              DELETE
+              PUT
+              OPTION
+
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+
+    sentinel:
+      datasource.ds2.file:
+        file: "classpath: gateway.json"
+        rule-type: gw-flow
+      datasource.ds1.file:
+        file: "classpath: api.json"
+        rule-type: gw-api-group
+      datasource.ds3.file:
+        file: "classpath: degrade.json"
+        rule-type: degrade
+      transport:
+        dashboard: localhost:8080
+      filter:
+        enabled: true
+      scg.fallback:
+        mode: response
+        response-status: 444
+        response-body: 1234
+      scg:
+        order: -100
+
 
   application:
     name: service-gateway

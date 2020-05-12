@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="task-cloud-core-bootstrap" />
         <module name="task-cloud-core-getway" />
-        <module name="task-cloud-core-taskservice" />
         <module name="task-cloud-core-api" />
+        <module name="task-cloud-core-taskservice" />
         <module name="task-cloud-core-consumer" />
       </profile>
     </annotationProcessing>

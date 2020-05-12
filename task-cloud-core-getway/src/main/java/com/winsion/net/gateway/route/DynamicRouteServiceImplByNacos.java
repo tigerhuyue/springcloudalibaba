@@ -39,7 +39,12 @@ public class DynamicRouteServiceImplByNacos {
 
             ConfigService configService= NacosFactory.createConfigService(nacosServer);
             String content = configService.getConfig(dataId, group, 5000);
+
             log.info("Loading routes: {}", content);
+            List<RouteDefinition> definitions1 = JSON.parseArray(content, RouteDefinition.class);
+            for(RouteDefinition definition: definitions1) {
+                dynamicRouteService.update(definition);
+            }
             configService.addListener(dataId, group, new Listener()  {
                 @Override
                 public void receiveConfigInfo(String configInfo) {

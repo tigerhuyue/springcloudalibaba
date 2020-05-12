@@ -1,0 +1,9 @@
+[
+  {
+    "resource": "sc-consumer",
+    "count": 200.0,
+    "grade": 0,
+    "passCount": 0,
+    "timeWindow": 10
+  }
+]
