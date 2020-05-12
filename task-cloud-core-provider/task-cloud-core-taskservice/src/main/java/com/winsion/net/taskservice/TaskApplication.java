@@ -7,13 +7,12 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import com.winsion.net.bootstrap.core.jpa.EnableDruid;
 import com.winsion.net.bootstrap.core.jpa.EnableEntityManagerHolder;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
-@EnableDiscoveryClient
+@EnableFeignClients
 @EnableEntityManagerHolder
-@EnableTransactionManagement
-@ServletComponentScan
 public class TaskApplication {
 
     public static void main(String[] args) {

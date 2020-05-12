@@ -17,6 +17,8 @@
     <modules>
 
         <module>task-cloud-core-taskservice</module>
+        <module>task-cloud-core-areaservice</module>
+        <module>task-cloud-core-userservice</module>
     </modules>
 
 
@@ -49,12 +51,6 @@
         </dependency>
 
 
-        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-            <version>${spring-boot.version}</version>
-        </dependency>
 
         <dependency>
             <groupId>org.springframework</groupId>

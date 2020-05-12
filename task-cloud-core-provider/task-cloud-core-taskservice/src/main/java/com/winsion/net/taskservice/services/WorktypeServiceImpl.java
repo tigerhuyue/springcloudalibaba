@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Service
+//@Component
 public class WorktypeServiceImpl implements Worktypeservice {
     @Autowired
     AreasRepository areasRepository;
