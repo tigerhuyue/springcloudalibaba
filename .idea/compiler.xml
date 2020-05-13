@@ -13,6 +13,7 @@
         <module name="task-cloud-core-areaservice" />
         <module name="task-cloud-core-taskservice" />
         <module name="task-cloud-core-consumer" />
+        <module name="task-cloud-core-areatypeservice" />
       </profile>
     </annotationProcessing>
   </component>
@@ -20,6 +21,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="task-cloud-core-api" options="-parameters" />
       <module name="task-cloud-core-areaservice" options="-parameters" />
+      <module name="task-cloud-core-areatypeservice" options="-parameters" />
       <module name="task-cloud-core-bootstrap" options="-parameters" />
       <module name="task-cloud-core-consumer" options="-parameters" />
       <module name="task-cloud-core-getway" options="-parameters" />

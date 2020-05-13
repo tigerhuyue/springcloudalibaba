@@ -20,7 +20,7 @@ public class AreasService implements AreasRestService {
     @Override
     public String getAllareas() {
         List<Areas> list=areasRepository.findAll();
-        String name=list.get(0).getAreaname();
+
         return JSON.toJSONString(list);
     }
 }

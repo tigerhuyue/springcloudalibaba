@@ -1,27 +1,37 @@
 dubbo:
-    cloud:
-        subscribed-services: ${provider.application.name},task-cloud-core-areatypeservice-provider
-    consumer:
-        check: false
-        lazy: true
+    scan:
+        base-packages: com.winsion.net.areatypes.*
     protocols:
         dubbo:
             name: dubbo
-            port: 12801
-    registry:
-        address: spring-cloud://localhost
-    scan:
-        base-packages: com.winsion.net.taskservice.*
+            port: -1
+    registries:
+        new:
+            address: spring-cloud://localhost
+#  registry:
+#   The Spring Cloud Dubbo's registry extension
+#    address: spring-cloud://localhost
+#   The traditional Dubbo's registry
+#   address: nacos://127.0.0.1:8848
+
+feign:
+    hystrix:
+        enabled: true
+
+server:
+    port: 9094
 
 management:
     endpoints:
         web:
             exposure:
                 include: dubborestmetadata
-provider:
-    application:
-        name: task-cloud-core-userservice-provider
-
+#Setting logging levels
+logging:
+    level:
+        com.netflix: WARN
+        org.springframework.web: WARN
+        com.thoughtmechanix: DEBUG
 
 spring:
     datasource:
@@ -50,10 +60,3 @@ spring:
         username: root
     jpa:
         show-sql: true
-
-#Setting the logging levels for the service
-logging:
-    level:
-        com.netflix: WARN
-        org.springframework.web: WARN
-        com.thoughtmechanix: DEBUG

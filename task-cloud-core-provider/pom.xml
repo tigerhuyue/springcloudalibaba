@@ -19,6 +19,7 @@
         <module>task-cloud-core-taskservice</module>
         <module>task-cloud-core-areaservice</module>
         <module>task-cloud-core-userservice</module>
+        <module>task-cloud-core-areatypeservice</module>
     </modules>
 
 

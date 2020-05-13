@@ -1,13 +1,13 @@
 package com.winsion.net.taskservice.client;
 
-import com.alibaba.cloud.dubbo.annotation.DubboTransported;
-import com.winsion.net.api.areasercice.AreasRestService;
-import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.client.RestTemplate;
 
 @Component
 public class AreaServiceClient {
@@ -16,9 +16,29 @@ public class AreaServiceClient {
     @Lazy
     private FeignRestService feignRestService;
 
+    @Autowired
+    private RestTemplate restTemplate;
+
+
     public  String getAllAreas()
     {
        return feignRestService.getAllareas();
+
+    }
+
+    /**
+     * 通过网关获取
+     * @return
+     */
+    public String geAllarea2()
+    {
+
+        ResponseEntity<String> restExchange =
+                restTemplate.exchange(
+                        "http://service-gateway:18085/area/getAllareas",
+                        HttpMethod.GET,
+                        null, String.class);
+        return restExchange.getBody();
 
     }
 
@@ -27,6 +47,8 @@ public class AreaServiceClient {
         @GetMapping("/getAllareas")
         String getAllareas();
     }
+
+
 
 //    @Reference
 //    AreasRestService restService;

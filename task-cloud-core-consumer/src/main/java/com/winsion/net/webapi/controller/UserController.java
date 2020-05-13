@@ -17,9 +17,18 @@ public class UserController {
         return worktypeservice.getareas();
     }
 
+    @GetMapping("/getareas2")
+    public String getareas() {
+        return worktypeservice.getareas2();
+    }
     @GetMapping("/getusers")
-    public String getusers(String message) {
+    public String getusers() {
         return worktypeservice.getUsers();
     }
+    @GetMapping("/getareatypes")
+    public String getareatypes() {
+        return worktypeservice.getareatypes();
+    }
+
 
 }

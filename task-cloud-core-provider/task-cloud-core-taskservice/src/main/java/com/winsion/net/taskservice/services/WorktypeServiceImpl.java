@@ -1,8 +1,10 @@
 package com.winsion.net.taskservice.services;
 
 import com.alibaba.fastjson.JSON;
+import com.winsion.net.api.areasercice.AreaTypeRestService;
 import com.winsion.net.api.taskservices.Worktypeservice;
 import com.winsion.net.taskservice.client.AreaServiceClient;
+import com.winsion.net.taskservice.client.AreaTypeClient;
 import com.winsion.net.taskservice.client.UserServiceClient;
 import com.winsion.net.taskservice.domain.enttiy.Areas;
 import com.winsion.net.taskservice.domain.repository.AreasRepository;
@@ -24,6 +26,9 @@ public class WorktypeServiceImpl implements Worktypeservice {
     @Autowired
     UserServiceClient userServiceClient;
 
+    @Autowired
+    AreaTypeClient areaTypeClient;
+
 
     @Override
     public  String getareas()
@@ -32,9 +37,24 @@ public class WorktypeServiceImpl implements Worktypeservice {
         return  areaServiceClient.getAllAreas();
 
     }
+
+    @Override
+    public  String getareas2()
+    {
+
+        return  areaServiceClient.geAllarea2();
+
+    }
     @Override
     public  String getUsers()
     {
         return  userServiceClient.getAllUsers();
     }
+
+    @Override
+    public String getareatypes() {
+        return areaTypeClient.getAllAreatypes();
+    }
+
+
 }
