@@ -1,0 +1,2 @@
+2020-05-13 09:58:31 [ERROR] [ main ] -  [DUBBO] publishProvider interfaceName is empty . providerUrl: consumer://169.254.57.70/com.alibaba.cloud.dubbo.service.DubboMetadataService?application=task-cloud-core-areaservice-provider&check=false&dubbo=2.0.2&generic=true&group=task-cloud-core-taskservice-provider&interface=com.alibaba.cloud.dubbo.service.DubboMetadataService&pid=14896&qos.enable=false&release=2.7.6&side=consumer&sticky=false&timestamp=1589335108790&version=1.0.0, dubbo version: 2.7.6, current host: 169.254.57.70
+  

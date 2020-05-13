@@ -3,7 +3,6 @@ package com.net.winsion.areas;
 import com.winsion.net.bootstrap.core.jpa.EnableEntityManagerHolder;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
-import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 

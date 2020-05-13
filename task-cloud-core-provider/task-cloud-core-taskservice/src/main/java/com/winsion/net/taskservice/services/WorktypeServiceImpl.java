@@ -2,6 +2,8 @@ package com.winsion.net.taskservice.services;
 
 import com.alibaba.fastjson.JSON;
 import com.winsion.net.api.taskservices.Worktypeservice;
+import com.winsion.net.taskservice.client.AreaServiceClient;
+import com.winsion.net.taskservice.client.UserServiceClient;
 import com.winsion.net.taskservice.domain.enttiy.Areas;
 import com.winsion.net.taskservice.domain.repository.AreasRepository;
 import org.apache.dubbo.config.annotation.Service;
@@ -11,16 +13,28 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 
 @Service
-//@Component
+@Component
 public class WorktypeServiceImpl implements Worktypeservice {
     @Autowired
     AreasRepository areasRepository;
 
+    @Autowired
+    AreaServiceClient areaServiceClient;
+
+    @Autowired
+    UserServiceClient userServiceClient;
+
+
     @Override
-    public  String getAll()
+    public  String getareas()
     {
-        List<Areas>list=areasRepository.findAll();
-        String name=list.get(0).getAreaname();
-        return JSON.toJSONString(list);
+
+        return  areaServiceClient.getAllAreas();
+
+    }
+    @Override
+    public  String getUsers()
+    {
+        return  userServiceClient.getAllUsers();
     }
 }

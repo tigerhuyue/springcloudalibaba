@@ -1,0 +1,62 @@
+dubbo:
+    scan:
+        base-packages: com.net.winsion.areas.*
+    protocols:
+        dubbo:
+            name: dubbo
+            port: -1
+    registries:
+        new:
+            address: spring-cloud://localhost
+#  registry:
+#   The Spring Cloud Dubbo's registry extension
+#    address: spring-cloud://localhost
+#   The traditional Dubbo's registry
+#   address: nacos://127.0.0.1:8848
+
+feign:
+    hystrix:
+        enabled: true
+
+server:
+    port: 9093
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: dubborestmetadata
+#Setting logging levels
+logging:
+    level:
+        com.netflix: WARN
+        org.springframework.web: WARN
+        com.thoughtmechanix: DEBUG
+
+spring:
+    datasource:
+        druid:
+            async-close-connection-enable: true
+            filter:
+                stat:
+                    db-type: h2
+                    log-slow-sql: true
+                    slow-sql-millis: 2000
+            initial-size: 2
+            max-active: 30
+            max-pool-prepared-statement-per-connection-size: 5
+            max-wait: 1234
+            min-evictable-idle-time-millis: 30001
+            min-idle: 2
+            pool-prepared-statements: true
+            test-on-borrow: true
+            test-on-return: true
+            test-while-idle: true
+            time-between-eviction-runs-millis: 10000
+            validation-query: select 1
+            validation-query-timeout: 1
+        password: 123456
+        url: jdbc:mysql://172.16.80.30:3306/railway_task?characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+        username: root
+    jpa:
+        show-sql: true

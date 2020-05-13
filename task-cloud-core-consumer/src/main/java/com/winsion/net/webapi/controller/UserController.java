@@ -12,10 +12,14 @@ public class UserController {
     Worktypeservice worktypeservice;
 
 
-    @GetMapping("/getall")
-    public String echo(String message) {
-        return worktypeservice.getAll();
+    @GetMapping("/getareas")
+    public String getareas(String message) {
+        return worktypeservice.getareas();
     }
 
+    @GetMapping("/getusers")
+    public String getusers(String message) {
+        return worktypeservice.getUsers();
+    }
 
 }

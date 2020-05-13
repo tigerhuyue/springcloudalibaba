@@ -1,13 +1,16 @@
 package com.net.winsion.areas.services;
 
 import com.alibaba.fastjson.JSON;
+import com.net.winsion.areas.api.AreasRestService;
 import com.net.winsion.areas.domain.entity.Areas;
 import com.net.winsion.areas.domain.repository.AreasRepository;
-import com.winsion.net.api.areasercice.AreasRestService;
-import org.apache.dubbo.config.annotation.Service;
+
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+//@Service
 @Service
 public class AreasService implements AreasRestService {
 

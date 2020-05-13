@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @EnableFeignClients
+@EnableDiscoveryClient
 @EnableEntityManagerHolder
 public class TaskApplication {
 

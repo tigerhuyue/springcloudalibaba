@@ -11,6 +11,7 @@ dubbo:
     subscribed-services: ${provider.application.name}
   consumer:
     check: false
+    lazy: true
 server:
   port: 9091
 
