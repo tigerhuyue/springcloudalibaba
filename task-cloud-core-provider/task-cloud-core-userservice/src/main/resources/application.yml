@@ -21,6 +21,7 @@ spring:
                     slow-sql-millis: 2000
             initial-size: 2
             max-active: 30
+
             max-pool-prepared-statement-per-connection-size: 5
             max-wait: 1234
             min-evictable-idle-time-millis: 30001
