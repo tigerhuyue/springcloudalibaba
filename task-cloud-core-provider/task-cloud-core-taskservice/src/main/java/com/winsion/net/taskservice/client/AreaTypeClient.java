@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AreaTypeClient {
+
     @Reference
     AreaTypeRestService areaTypeRestService;
-
     public String getAllAreatypes() {
         return areaTypeRestService.getAllareatypes();
     }
