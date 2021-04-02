@@ -12,6 +12,8 @@ dubbo:
         address: spring-cloud://localhost
     scan:
         base-packages: com.winsion.net.taskservice.*
+    provider:
+        loadbalance:
 
 management:
     endpoints:

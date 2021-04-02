@@ -51,6 +51,12 @@
             <version>${spring-boot.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+            <version>${spring-cloud-alibaba-dubbo.version}</version>
+        </dependency>
+
 
 
         <dependency>
@@ -73,6 +79,11 @@
             <version>${druid.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rocketmq</artifactId>
+            <version>${spring-cloud-alibaba-dubbo.version}</version>
+        </dependency>
 
 
         <!--  API -->

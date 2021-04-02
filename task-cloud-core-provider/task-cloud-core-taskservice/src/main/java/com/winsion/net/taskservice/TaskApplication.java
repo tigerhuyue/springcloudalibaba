@@ -1,6 +1,7 @@
 package com.winsion.net.taskservice;
 
 import com.alibaba.cloud.dubbo.annotation.DubboTransported;
+import com.winsion.net.taskservice.message.output.MessageSource;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -10,6 +11,7 @@ import com.winsion.net.bootstrap.core.jpa.EnableDruid;
 import com.winsion.net.bootstrap.core.jpa.EnableEntityManagerHolder;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.cloud.openfeign.EnableFeignClients;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.context.annotation.Bean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.client.RestTemplate;
@@ -18,6 +20,7 @@ import org.springframework.web.client.RestTemplate;
 @EnableFeignClients
 @EnableDiscoveryClient
 @EnableEntityManagerHolder
+@EnableBinding({ MessageSource.class})
 public class TaskApplication {
 
     public static void main(String[] args) {
