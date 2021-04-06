@@ -10,7 +10,12 @@ public class AreaTypeClient {
 
     @Reference
     AreaTypeRestService areaTypeRestService;
+
     public String getAllAreatypes() {
         return areaTypeRestService.getAllareatypes();
+    }
+
+    public Boolean deleteByAreatypeid(String areatypeid) {
+        return areaTypeRestService.delByAreaTypeid(areatypeid);
     }
 }

@@ -25,7 +25,9 @@ public class AreaServiceClient {
        return feignRestService.getAllareas();
 
     }
-
+    public  boolean delbyareaTypeid(String areaTypeid) {
+        return feignRestService.delbyareaTypeid(areaTypeid);
+    }
     /**
      * 通过网关获取
      * @return
@@ -46,6 +48,9 @@ public class AreaServiceClient {
     public interface FeignRestService {
         @GetMapping("/getAllareas")
         String getAllareas();
+
+        @GetMapping("/delbyareaTypeid")
+        boolean delbyareaTypeid(String areaTypeid);
     }
 
 

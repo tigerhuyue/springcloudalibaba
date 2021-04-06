@@ -8,4 +8,6 @@ import org.springframework.web.bind.annotation.RestController;
 public interface AreaTypeRestService {
       @GetMapping("/getAllareatypes")
      String getAllareatypes();
+    @GetMapping("/delByAreaTypeid")
+    boolean delByAreaTypeid(String areaTypeid);
 }

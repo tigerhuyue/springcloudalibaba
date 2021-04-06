@@ -17,10 +17,15 @@ public class AreaTypeService implements AreaTypeRestService {
     AreasTypeRepository areasTypeRepository;
 
 
-
     @Override
     public String getAllareatypes() {
-        List<Areatypes> areatypesList=areasTypeRepository.findAll();
+        List<Areatypes> areatypesList = areasTypeRepository.findAll();
         return JSON.toJSONString(areatypesList);
+    }
+
+    @Override
+    public boolean delByAreaTypeid(String areaTypeid) {
+        areasTypeRepository.deleteAllByAreatypeid(areaTypeid);
+        return true;
     }
 }

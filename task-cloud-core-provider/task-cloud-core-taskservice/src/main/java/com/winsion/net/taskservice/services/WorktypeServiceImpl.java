@@ -33,29 +33,25 @@ public class WorktypeServiceImpl implements Worktypeservice {
     @Autowired
     AreaTypeClient areaTypeClient;
 
+    private static final String SUCCESS = "SUCCESS";
 
     @Override
-    public  String getareas()
-    {
+    public String getareas() {
 
-        return  areaServiceClient.getAllAreas();
+        return areaServiceClient.getAllAreas();
 
     }
 
     @Override
-    public  String getareas2() {
+    public String getareas2() {
 
         return areaServiceClient.geAllarea2();
     }
 
 
-
-
-
     @Override
-    public  String getUsers()
-    {
-        return  userServiceClient.getAllUsers();
+    public String getUsers() {
+        return userServiceClient.getAllUsers();
     }
 
     @Override
@@ -63,11 +59,31 @@ public class WorktypeServiceImpl implements Worktypeservice {
         return areaTypeClient.getAllAreatypes();
     }
 
-
-    @GlobalTransactional(timeoutMills = 30000)
     @Override
     public String updateTask() {
         return null;
+    }
+
+
+    @GlobalTransactional(timeoutMills = 30000)
+    @Override
+    public String DelteAreas(
+            String areatypeid
+
+    ) {
+
+        boolean flag = areaTypeClient.deleteByAreatypeid(areatypeid);
+        if (!flag) {
+            throw new RuntimeException("mock error");
+
+        }
+
+        flag = areaServiceClient.delbyareaTypeid(areatypeid);
+        if (!flag) {
+            throw new RuntimeException("mock error");
+
+        }
+        return SUCCESS;
     }
 
 

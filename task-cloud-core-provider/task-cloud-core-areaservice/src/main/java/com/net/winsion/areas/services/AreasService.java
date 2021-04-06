@@ -19,9 +19,17 @@ public class AreasService implements AreasRestService {
 
     @Override
     public String getAllareas() {
-        List<Areas> list=areasRepository.findAll();
+        List<Areas> list = areasRepository.findAll();
 
         return JSON.toJSONString(list);
+    }
+
+    @Override
+    public boolean delbyareaTypeid(String areaTypeid) {
+
+        areasRepository.deleteAllByAreatypeid(areaTypeid);
+        return true;
+
     }
 }
 
