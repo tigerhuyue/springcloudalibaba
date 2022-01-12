@@ -45,7 +45,7 @@
         <servlet-api.vsersion>4.0.1</servlet-api.vsersion>
 
         <!-- Apache Dubbo -->
-        <dubbo.version>2.7.6</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
         <curator.version>4.3.0</curator.version>
 
         <!-- Apache RocketMQ -->
